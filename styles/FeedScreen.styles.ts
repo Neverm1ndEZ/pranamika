@@ -24,6 +24,14 @@ export const feedStyles = StyleSheet.create({
 		marginVertical: theme.spacing.sm,
 	},
 
+	logoutButton: {
+		backgroundColor: theme.colors.secondary,
+		padding: theme.spacing.md,
+		borderRadius: theme.borderRadius.md,
+		alignItems: "center",
+		marginVertical: theme.spacing.sm,
+	},
+
 	buttonText: {
 		color: theme.colors.background,
 		fontSize: theme.typography.body,

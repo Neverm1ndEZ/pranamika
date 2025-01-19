@@ -69,7 +69,7 @@ const AuthScreen: React.FC<Props> = ({ navigation }) => {
 
 	return (
 		<View style={styles.container}>
-			<Text style={styles.title}>Government Official Review</Text>
+			<Text style={styles.title}>Pranamika - Government Official Review</Text>
 			<TextInput
 				style={styles.input}
 				placeholder="Name"

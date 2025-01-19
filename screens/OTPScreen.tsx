@@ -28,7 +28,6 @@ const OTPScreen: React.FC<Props> = ({ navigation, route }) => {
 
 			setToken(response.data.token);
 			setUser(response.data.user);
-			navigation.replace("Feed");
 		} catch (error) {
 			console.error("Error verifying OTP:", error);
 		}

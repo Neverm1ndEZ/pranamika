@@ -25,6 +25,7 @@ const FeedScreen: React.FC = () => {
 	const navigation =
 		useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 	const { token } = useAuth();
+	const { logout } = useAuth();
 
 	const fetchReviews = async () => {
 		try {
@@ -77,9 +78,18 @@ const FeedScreen: React.FC = () => {
 
 	return (
 		<View style={styles.container}>
-			<TouchableOpacity style={styles.writeButton} onPress={handleWriteReview}>
-				<Text style={styles.buttonText}>Write a Review</Text>
-			</TouchableOpacity>
+			<View style={styles.feedHeader}>
+				<TouchableOpacity
+					style={styles.writeButton}
+					onPress={handleWriteReview}
+				>
+					<Text style={styles.buttonText}>Write a Review</Text>
+				</TouchableOpacity>
+
+				<TouchableOpacity style={styles.logoutButton} onPress={logout}>
+					<Text style={styles.buttonText}>Logout</Text>
+				</TouchableOpacity>
+			</View>
 
 			{reviews.length === 0 ? (
 				<View style={styles.emptyContainer}>
@@ -102,6 +112,13 @@ const FeedScreen: React.FC = () => {
 
 const styles = {
 	...feedStyles,
+	feedHeader: {
+		flex: 1,
+		flexDirection: "row" as const,
+		justifyContent: "space-between" as const,
+		alignItems: "center" as const,
+		padding: 15,
+	},
 	centerContainer: {
 		flex: 1,
 		justifyContent: "center" as const,
